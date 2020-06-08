@@ -1,0 +1,13 @@
+html{
+  font-size:10px
+}
+
+h1{
+  font-family: 'Grand Hotel',cursive;
+  text-align: center;
+  font-size: 8rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+  color: black;
+  margin: 2rem 0;
+}
