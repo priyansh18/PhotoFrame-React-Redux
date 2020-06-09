@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import Photo from "./Photo";
+import {Link} from 'react-router-dom'
 import PropTypes from "prop-types";
 
 class PhotoFrame extends Component {
   render() {
     return (
       <div>
-        <button className="addIcon"></button>
+        <Link className="addIcon" to="/AddPhoto" />
         <div className="photo-grid">
           {this.props.photoBlock.map((photo, index) => (
             <Photo
