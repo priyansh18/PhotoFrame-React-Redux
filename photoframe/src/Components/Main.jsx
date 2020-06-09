@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Title from "./Title";
 import PhotoFrame from "./PhotoFrame";
 
-
 class Main extends Component {
   state = {
     allPhotos: [
@@ -31,7 +30,9 @@ class Main extends Component {
 
   handleRemove = (photoRemoved) => {
     // console.log(photoRemoved.description)
-    this.setState((state) => ({allPhotos:this.state.allPhotos.filter(photo=>photo!==photoRemoved)}));
+    this.setState((state) => ({
+      allPhotos: this.state.allPhotos.filter((photo) => photo !== photoRemoved),
+    }));
   };
   render() {
     return (
