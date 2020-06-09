@@ -1,11 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Main from './Components/Main';
-import './styles/stylesheet.css'
+import React from "react";
+import ReactDOM from "react-dom";
+import Main from "./Components/Main";
+import "./styles/stylesheet.css";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <Main />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </BrowserRouter>,
+  document.getElementById("root")
 );
