@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Title from "./Title";
 import PhotoFrame from "./PhotoFrame";
-import AddPhoto from './AddPhotos';
+import AddPhoto from "./AddPhoto";
+import { Route } from "react-router-dom";
 
 class Main extends Component {
   state = {
@@ -38,12 +39,20 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Title title={"PhotoFrame"} />
-        <PhotoFrame
-          photoBlock={this.state.allPhotos}
-          onRemove={this.handleRemove}
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <div>
+              <Title title={"PhotoFrame"} />
+              <PhotoFrame
+                photoBlock={this.state.allPhotos}
+                onRemove={this.handleRemove}
+              />
+            </div>
+          )}
         />
-        <AddPhoto/>
+        <Route path="/AddPhoto" component={AddPhoto} />
       </div>
     );
   }
