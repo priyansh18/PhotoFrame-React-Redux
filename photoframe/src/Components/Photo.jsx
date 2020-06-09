@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Photo extends Component {
   render() {
-    const { finalPhoto } = this.props;
+    const { finalPhoto,onRemove } = this.props;
     return (
       <figure className="figure">
         <img
@@ -13,7 +13,7 @@ class Photo extends Component {
         <figcaption>
           <p>{finalPhoto.description}</p>
         </figcaption>
-        <div className="button-container"><button className='remove-button'>Remove</button></div>
+        <div className="button-container"><button className='remove-button' onClick={()=>onRemove(finalPhoto)}>Remove</button></div>
       </figure>
     );
   }
