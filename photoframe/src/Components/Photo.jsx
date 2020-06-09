@@ -2,7 +2,20 @@ import React, { Component } from "react";
 
 class Photo extends Component {
   render() {
-    return <figure className="figure"></figure>;
+    const { finalPhoto } = this.props;
+    return (
+      <figure className="figure">
+        <img
+          className="photo"
+          src={finalPhoto.imageLink}
+          alt={finalPhoto.description}
+        />
+        <figcaption>
+          <p>{finalPhoto.description}</p>
+        </figcaption>
+        <div className="button-container"><button className='remove-button'>Remove</button></div>
+      </figure>
+    );
   }
 }
 
