@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Title from "./Title";
 import PhotoFrame from "./PhotoFrame";
+import AddPhoto from './AddPhotos';
 
 class Main extends Component {
   state = {
@@ -42,6 +43,7 @@ class Main extends Component {
           photoBlock={this.state.allPhotos}
           onRemove={this.handleRemove}
         />
+        <AddPhoto/>
       </div>
     );
   }
