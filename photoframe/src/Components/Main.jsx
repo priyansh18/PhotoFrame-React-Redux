@@ -36,6 +36,12 @@ class Main extends Component {
       allPhotos: this.state.allPhotos.filter((photo) => photo !== photoRemoved),
     }));
   };
+
+  handlePhoto = (photoSubmitted) => {
+    this.setState((state) => ({
+      allPhotos: state.allPhotos.concat([photoSubmitted]),
+    }));
+  };
   render() {
     return (
       <div>
@@ -52,7 +58,19 @@ class Main extends Component {
             </div>
           )}
         />
-        <Route path="/AddPhoto" component={AddPhoto} />
+        <Route
+          path="/AddPhoto"
+          render={({ history }) => {
+            return (
+              <AddPhoto
+                onAdd={(addedPhoto) => {
+                  this.handlePhoto(addedPhoto);
+                  history.push("/");
+                }}
+              />
+            );
+          }}
+        />
       </div>
     );
   }
