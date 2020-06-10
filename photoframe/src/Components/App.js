@@ -6,7 +6,8 @@ import { withRouter } from "react-router";
 
 function mapStateToProps(state) {
   return {
-    allPhotos: state,
+    allPhotos: state.allPhotos,
+    comments:state.comments
   };
 }
 function mapDispatchToProps(dispatch) {

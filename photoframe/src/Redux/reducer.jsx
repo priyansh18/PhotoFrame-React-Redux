@@ -1,6 +1,15 @@
-import allPhotos from "./../data/allPhotos";
+import _allPhotos from "./../data/allPhotos";
+import { combineReducers } from "redux";
 
-const allPhotosReducer = function (state = allPhotos, action) {
+function comments(state = [], action) {
+  switch (action.type) {
+    case "ADD_COMMENT": return [...state,action.comment]
+    default:
+      return state;
+  }
+}
+
+function allPhotos(state = _allPhotos, action) {
   switch (action.type) {
     case "REMOVE_PHOTO":
       return [
@@ -8,10 +17,12 @@ const allPhotosReducer = function (state = allPhotos, action) {
         ...state.slice(action.index + 1),
       ];
     case "ADD_PHOTO":
-      return [...state,action.photo]
+      return [...state, action.photo];
     default:
       return state;
   }
-};
+}
 
-export default allPhotosReducer;
+const rootReducer = combineReducers({ allPhotos, comments });
+
+export default rootReducer;
