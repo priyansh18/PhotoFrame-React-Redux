@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Title from "./Title";
 import PhotoFrame from "./PhotoFrame";
 import AddPhoto from "./AddPhoto";
 import { Link, Route } from "react-router-dom";
+import Single from "./Single";
 
 class Main extends Component {
   render() {
@@ -26,6 +26,8 @@ class Main extends Component {
             return <AddPhoto {...this.props} onHistory={history} />;
           }}
         />
+
+        <Route path="/single/:id" render={(params) => <Single {...this.props} {...params} />} />
       </div>
     );
   }

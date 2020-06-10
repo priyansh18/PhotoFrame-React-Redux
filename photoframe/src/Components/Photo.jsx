@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 class Photo extends Component {
   render() {
     const { finalPhoto, removePhoto, index } = this.props;
     return (
       <figure className="figure">
-        <img
-          className="photo"
-          src={finalPhoto.imageLink}
-          alt={finalPhoto.description}
-        />
+        <Link to={`/single/${finalPhoto.id}`}>
+          <img
+            className="photo"
+            src={finalPhoto.imageLink}
+            alt={finalPhoto.description}
+          />
+        </Link>
+
         <figcaption>
           <p>{finalPhoto.description}</p>
         </figcaption>
