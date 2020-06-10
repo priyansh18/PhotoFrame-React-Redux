@@ -1,6 +1,6 @@
 import allPhotos from './../data/allPhotos';
 
-const allPhotosReducer = state=allPhotos =>action=>{
+const allPhotosReducer = function(state=allPhotos,action){
   return state
 }
 

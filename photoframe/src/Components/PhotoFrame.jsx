@@ -29,7 +29,6 @@ class PhotoFrame extends Component {
 
 PhotoFrame.propTypes = {
   photoBlock: PropTypes.array.isRequired,
-  onRemove: PropTypes.func.isRequired,
 };
 
 export default PhotoFrame;

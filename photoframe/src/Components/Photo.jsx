@@ -22,7 +22,6 @@ class Photo extends Component {
 
 Photo.propTypes={
   finalPhoto:PropTypes.object.isRequired,
-  onRemove:PropTypes.func.isRequired
 }
 
 export default Photo;
