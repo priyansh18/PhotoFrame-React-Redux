@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
-import { removePhoto } from './../Redux/actions';
+import PropTypes from "prop-types";
 
 class Photo extends Component {
   render() {
-    const { finalPhoto,onRemove } = this.props;
+    const { finalPhoto, removePhoto, index } = this.props;
     return (
       <figure className="figure">
         <img
@@ -15,14 +14,18 @@ class Photo extends Component {
         <figcaption>
           <p>{finalPhoto.description}</p>
         </figcaption>
-        <div className="button-container"><button className='remove-button' onClick={()=>{props.removePhoto(1)}}>Remove</button></div>
+        <div className="button-container">
+          <button className="remove-button" onClick={() => removePhoto(index)}>
+            Remove
+          </button>
+        </div>
       </figure>
     );
   }
 }
 
-Photo.propTypes={
-  finalPhoto:PropTypes.object.isRequired,
-}
+Photo.propTypes = {
+  finalPhoto: PropTypes.object.isRequired,
+};
 
 export default Photo;

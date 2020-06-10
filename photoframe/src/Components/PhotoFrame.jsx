@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Photo from "./Photo";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import allPhotos from './../data/allPhotos';
 
 class PhotoFrame extends Component {
   render() {
@@ -15,11 +14,7 @@ class PhotoFrame extends Component {
               return y.id - x.id;
             })
             .map((photo, index) => (
-              <Photo
-                key={index}
-                {...props}
-                finalPhoto={photo}
-              />
+              <Photo key={index} {...this.props} index={index} finalPhoto={photo} />
             ))}
         </div>
         ;

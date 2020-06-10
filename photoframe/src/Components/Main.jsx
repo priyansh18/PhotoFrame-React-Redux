@@ -3,7 +3,6 @@ import Title from "./Title";
 import PhotoFrame from "./PhotoFrame";
 import AddPhoto from "./AddPhoto";
 import { Route } from "react-router-dom";
-import { removePhoto } from './../Redux/actions';
 
 class Main extends Component {
   // state = {
@@ -44,10 +43,8 @@ class Main extends Component {
   //   }));
   // };
 
-  componentDidMount(){
-    this.props.dispatch(removePhoto(1))
-  }
   render() {
+    console.log(this.props);
     return (
       <div>
         <Route
@@ -56,10 +53,7 @@ class Main extends Component {
           render={() => (
             <div>
               <Title title={"PhotoFrame"} />
-              <PhotoFrame
-                {...this.props}
-                
-              />
+              <PhotoFrame {...this.props} />
             </div>
           )}
         />
