@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
+import { removePhoto } from './../Redux/actions';
 
 class Photo extends Component {
   render() {
@@ -14,7 +15,7 @@ class Photo extends Component {
         <figcaption>
           <p>{finalPhoto.description}</p>
         </figcaption>
-        <div className="button-container"><button className='remove-button' onClick={()=>onRemove(finalPhoto)}>Remove</button></div>
+        <div className="button-container"><button className='remove-button' onClick={()=>{props.removePhoto(1)}}>Remove</button></div>
       </figure>
     );
   }
