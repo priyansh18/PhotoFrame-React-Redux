@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class Photo extends Component {
   render() {
-    const { finalPhoto, removePhoto, index, history } = this.props;
+    const { finalPhoto, removePhoto, index, history, comments } = this.props;
     return (
       <figure className="figure">
         <Link to={`/single/${finalPhoto.id}`}>
@@ -28,6 +28,12 @@ class Photo extends Component {
           >
             Remove
           </button>
+          <Link className="button" to={`/single/${finalPhoto.id}`}>
+            <div className="comment-count">
+              <div className="speech-bubble"></div>
+              {comments[finalPhoto.id] ? comments[finalPhoto.id].length : 0}
+            </div>
+          </Link>
         </div>
       </figure>
     );
