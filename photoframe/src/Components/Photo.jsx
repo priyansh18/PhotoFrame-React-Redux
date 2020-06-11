@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class Photo extends Component {
   render() {
-    const { finalPhoto, removePhoto, index } = this.props;
+    const { finalPhoto, removePhoto, index, history } = this.props;
     return (
       <figure className="figure">
         <Link to={`/single/${finalPhoto.id}`}>
@@ -19,7 +19,13 @@ class Photo extends Component {
           <p>{finalPhoto.description}</p>
         </figcaption>
         <div className="button-container">
-          <button className="remove-button" onClick={() => removePhoto(index)}>
+          <button
+            className="remove-button"
+            onClick={() => {
+              removePhoto(index);
+              history.push("/");
+            }}
+          >
             Remove
           </button>
         </div>
