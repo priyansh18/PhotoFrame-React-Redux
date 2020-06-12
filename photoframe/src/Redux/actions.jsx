@@ -26,6 +26,9 @@ export function startLoadingPhoto() {
           allPhotos.push(childSnapshot.val());
         });
         dispatch(loadPhoto(allPhotos));
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 }
@@ -37,6 +40,23 @@ export function startRemovingPhoto(index, id) {
       .remove()
       .then(() => {
         dispatch(removePhoto(index));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+}
+
+export function startAddingComment(comment, photoId) {
+  return (dispatch) => {
+    return database
+      .ref(`comments/${photoId}`)
+      .push(comment)
+      .then(() => {
+        dispatch(addComment(comment,photoId))
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 }
