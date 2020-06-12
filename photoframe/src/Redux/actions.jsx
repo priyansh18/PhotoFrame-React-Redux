@@ -53,11 +53,33 @@ export function startAddingComment(comment, photoId) {
       .ref(`comments/${photoId}`)
       .push(comment)
       .then(() => {
-        dispatch(addComment(comment,photoId))
+        dispatch(addComment(comment, photoId));
       })
       .catch((error) => {
         console.log(error);
       });
+  };
+}
+
+export function startLoadingComment() {
+  return (dispatch) => {
+    return database
+      .ref("comments")
+      .once("value")
+      .then((snapshot) => {
+        let comments = {};
+        snapshot.forEach((childSnapshot) => {
+          comments[childSnapshot.key] = Object.values(childSnapshot.val());
+        });
+        dispatch(loadComments(comments));
+      });
+  };
+}
+
+export function loadComments(comments) {
+  return {
+    type: "LOAD_COMMENTS",
+    comments,
   };
 }
 

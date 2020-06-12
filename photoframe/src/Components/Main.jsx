@@ -7,6 +7,7 @@ import Single from "./Single";
 class Main extends Component {
   componentDidMount(){
     this.props.startLoadingPhoto()
+    this.props.startLoadingComment()
   }
   render() {
     return (

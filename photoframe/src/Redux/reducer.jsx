@@ -11,7 +11,7 @@ function comments(state = [], action) {
           ...state,
           [action.photoId]: [...state[action.photoId], [action.comment]],
         };
-
+    case "LOAD_COMMENTS": return action.comments
     default:
       return state;
   }
@@ -26,7 +26,8 @@ function allPhotos(state = _allPhotos, action) {
       ];
     case "ADD_PHOTO":
       return [...state, action.photo];
-    case "LOAD_PHOTOS":return action.allPhotos
+    case "LOAD_PHOTOS":
+      return action.allPhotos;
     default:
       return state;
   }
