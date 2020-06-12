@@ -5,6 +5,9 @@ import { Link, Route } from "react-router-dom";
 import Single from "./Single";
 
 class Main extends Component {
+  componentDidMount(){
+    this.props.startLoadingPhoto()
+  }
   render() {
     return (
       <div>

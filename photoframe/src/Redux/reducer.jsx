@@ -26,6 +26,7 @@ function allPhotos(state = _allPhotos, action) {
       ];
     case "ADD_PHOTO":
       return [...state, action.photo];
+    case "LOAD_PHOTOS":return action.allPhotos
     default:
       return state;
   }
