@@ -30,6 +30,17 @@ export function startLoadingPhoto() {
   };
 }
 
+export function startRemovingPhoto(index, id) {
+  return (dispatch) => {
+    return database
+      .ref(`allPhotos/${id}`)
+      .remove()
+      .then(() => {
+        dispatch(removePhoto(index));
+      });
+  };
+}
+
 export function removePhoto(index) {
   return {
     type: "REMOVE_PHOTO",

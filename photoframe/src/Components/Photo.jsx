@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 class Photo extends Component {
   render() {
-    const { finalPhoto, removePhoto, index, history, comments } = this.props;
+    const { finalPhoto, startRemovingPhoto, index, history, comments } = this.props;
     return (
       <figure className="figure">
         <Link to={`/single/${finalPhoto.id}`}>
@@ -22,7 +22,7 @@ class Photo extends Component {
           <button
             className="remove-button"
             onClick={() => {
-              removePhoto(index);
+              startRemovingPhoto(index,finalPhoto.id);
               history.push("/");
             }}
           >
