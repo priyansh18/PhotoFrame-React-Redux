@@ -2,4 +2,4 @@
 
 Check It out here -- https://photoframe-priyansh.web.app/
 
-![](images/Photoframe.jpg)
+![](https://github.com/priyansh18/PhotoFrame-React-Redux/blob/master/images/Photoframe.JPG)
